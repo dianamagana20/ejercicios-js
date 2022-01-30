@@ -3,6 +3,21 @@ const ejercicio1 = [
   19, 88, 456, 13, 23, 24,
 ];
 
+
+const Primos = num => {
+  for(let i = 2; i < num; i++) {
+    if(num % i == 0){
+      return false}
+  } 
+  return true;
+}
+
+ejercicio1.forEach(num => {
+  if(Primos(num)){
+    console.log(`El ${num} es primo`);
+  }
+});
+
 const ejercicio2 = [
   {
     nombre: "Gabriel",
@@ -35,3 +50,30 @@ const ejercicio2 = [
     esFamiliar: true,
   },
 ];
+
+ejercicio2.forEach((guess) => {
+  if(guess.edad >=18 && guess.esFamiliar){
+    console.log(`Bienvenido ${guess.nombre}, puedes pasar c: `)
+  }
+});
+
+/*Serie de Fibonacci
+ let x=1, n=0, r=0, p=0;
+
+ while(p <= 50){
+   p= p+1;
+   r= x+n;
+   x=n;
+   n=r;
+   console.log(r);
+ }
+ */
+
+ function fibo(numero){
+   let array=[1, 1];
+   for(let i = 2; i < numero; i++){
+     array[i] = array[i-1] + array[i-2];
+   }
+   return array;
+ }
+ console.log(fibo(50));
